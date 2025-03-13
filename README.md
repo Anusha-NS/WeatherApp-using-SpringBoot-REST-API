@@ -3,6 +3,7 @@ Weather Information API
 This is a Spring Boot application that provides weather information for a given pincode and date. It uses the OpenWeather API to fetch weather data and caches the results in a database for future requests.
 
 **Features**
+
 Fetch weather information for a given pincode and date.
 
 Cache weather data in a database to optimize API calls.
@@ -26,6 +27,7 @@ json
   "temperature": 30.5
 }
 
+
 2. Valid Request (Fetch from API)
 Request
 GET /api/weather/411014/2023-10-15
@@ -40,6 +42,8 @@ json
   "weatherDescription": "Cloudy",
   "temperature": 25.0
 }
+
+
 3. Invalid Pincode
 Request
 GET /api/weather/00000/2020-10-15
@@ -53,6 +57,8 @@ Copy
   "message": "Invalid pincode. Pincode must be a 6-digit number.",
   "path": "/api/weather/00000/2020-10-15"
 }
+
+
 4. Invalid Date Format
 request /api/weather/411014/2020/10/15
 Response
@@ -63,6 +69,8 @@ Response
   "message": "Invalid date format. Please use 'yyyy-MM-dd'.",
   "path": "/api/weather/411014/2020/10/15"
 }
+
+
 5. Pincode Not Found in Geocoding API
 Request: /api/weather/999999/2020-10-15
 Response
